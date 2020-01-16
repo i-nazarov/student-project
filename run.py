@@ -25,13 +25,6 @@ def probability(txt_cnt, txt_len):
 	return l
 
 
-def nvalue(chrlist):
-	c = 0
-	for i in chrlist:
-		c += 1
-	return c
-
-
 def entropy(n):
 	s = 0
 	for i in n:
@@ -279,10 +272,6 @@ def main():
 	pi2 = probability(text2_every_char_count, text_len2)
 	pi3 = probability(text3_every_char_count, text_len3)
 	pi4 = probability(text4_every_char_count, text_len4)
-	n1 = nvalue (text1_every_char_count)
-	n2 = nvalue (text2_every_char_count)
-	n3 = nvalue (text3_every_char_count)
-	n4 = nvalue (text4_every_char_count)
 	h1 = entropy(text1_every_char_count)
 	h2 = entropy(text2_every_char_count)
 	h3 = entropy(text3_every_char_count)

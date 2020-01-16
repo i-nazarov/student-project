@@ -3,10 +3,6 @@ import math
 import pylab
 
 
-def text2list(txt):
-	return [c for c in txt]
-
-
 def count_chars(txt):
 	dct = {}
 	for c in txt:
@@ -260,10 +256,10 @@ def main():
 	text_len2 = len(text2)
 	text_len3 = len(text3)
 	text_len4 = len(text4)
-	text1_list = text2list(text1) #lists of all characters
-	text2_list = text2list(text2)
-	text3_list = text2list(text3)
-	text4_list = text2list(text4)
+	text1_list = list(text1) #lists of all characters
+	text2_list = list(text2)
+	text3_list = list(text3)
+	text4_list = list(text4)
 	text1_every_char_count, text1_every_char_list = count_chars(text1) #lists of every char count and list
 	text2_every_char_count, text2_every_char_list = count_chars(text2)
 	text3_every_char_count, text3_every_char_list = count_chars(text3)

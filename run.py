@@ -38,7 +38,17 @@ class Text:
 		ent = 0
 		for key, val in self.char_prob.items():
 			ent += val * (math.log(val, 10))
-		return (-1) * round(ent, 2)
+		self.entropy = ent
+
+
+def read_texts(n):
+	texts = []
+	for i in range(1, n+1):
+		text = open(f'text{i}.txt').readlines()
+		text = ''.join(text)
+		text = text.lower()
+		texts.append(text)
+	return texts
 
 
 def all_list(l1, l2, l3, l4):
@@ -326,6 +336,7 @@ def output(c1, c2, c3, c4, s1, s2, s3, s4, p1, p2, p3, p4, h1, h2, h3, h4, all_l
 
 
 def main():
+	texts = read_texts(4)
 	text = open('text1.txt')
 	text1 = text.read()
 	text = open('text2.txt')

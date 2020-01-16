@@ -7,16 +7,14 @@ def text2list(txt):
 	return [c for c in txt]
 
 
-def count_char_num(txt): #counting numbers of exist characters
-	lc = []
-	la = []
-	for a in range(32,1103):
-		achar = chr(a)
-		count = txt.count(achar)
-		if count != 0:
-			lc.append(count)
-			la.append(achar)
-	return lc, la
+def count_chars(txt):
+	dct = {}
+	for c in txt:
+		if c not in dct:
+			dct[c] = 1
+		else:
+			dct[c] += 1
+	return dct
 
 
 def probability(txt_cnt, txt_len):
@@ -273,10 +271,10 @@ def main():
 	text2_list = text2list(text2)
 	text3_list = text2list(text3)
 	text4_list = text2list(text4)
-	text1_every_char_count, text1_every_char_list = count_char_num(text1) #lists of every char count and list
-	text2_every_char_count, text2_every_char_list = count_char_num(text2)
-	text3_every_char_count, text3_every_char_list = count_char_num(text3)
-	text4_every_char_count, text4_every_char_list = count_char_num(text4)
+	text1_every_char_count, text1_every_char_list = count_chars(text1) #lists of every char count and list
+	text2_every_char_count, text2_every_char_list = count_chars(text2)
+	text3_every_char_count, text3_every_char_list = count_chars(text3)
+	text4_every_char_count, text4_every_char_list = count_chars(text4)
 	pi1 = probability(text1_every_char_count, text_len1) # lists of probabilities
 	pi2 = probability(text2_every_char_count, text_len2)
 	pi3 = probability(text3_every_char_count, text_len3)
@@ -290,7 +288,7 @@ def main():
 	h3 = entropy(text3_every_char_count)
 	h4 = entropy(text4_every_char_count)
 	all_lst = all_list(text1_list,text2_list,text3_list,text4_list)
-	all_c, all_l = count_char_num (all_lst) #count and list of characters from all texts
+	all_c, all_l = count_chars (all_lst) #count and list of characters from all texts
 	sn1 = serial_number(all_l, text1_every_char_list)
 	sn2 = serial_number(all_l, text2_every_char_list)
 	sn3 = serial_number(all_l, text3_every_char_list)

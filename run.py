@@ -41,7 +41,7 @@ class Text:
 		self.entropy = ent
 
 
-def read_texts(n):
+def get_strings(n):
 	texts = []
 	for i in range(1, n+1):
 		text = open(f'text{i}.txt').readlines()
@@ -336,15 +336,14 @@ def output(c1, c2, c3, c4, s1, s2, s3, s4, p1, p2, p3, p4, h1, h2, h3, h4, all_l
 
 
 def main():
-	texts = read_texts(4)
-	text = open('text1.txt')
-	text1 = text.read()
-	text = open('text2.txt')
-	text2 = text.read()
-	text = open('text3.txt')
-	text3 = text.read()
-	text = open('text4.txt')
-	text4 = text.read()
+	strings = get_strings(4)
+	texts = [Text(string) for string in strings]
+	for text in texts:
+		text.count_chars()
+		text.calc_prob()
+		text.calc_len()
+		text.calc_ent()
+
 	text_len1 = len(text1)  # count of all characters
 	text_len2 = len(text2)
 	text_len3 = len(text3)

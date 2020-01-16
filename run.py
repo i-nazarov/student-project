@@ -241,152 +241,158 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
 							counter1 += 1
 						print (' ________________________________________________________________________________________________________________')
-text = open('text1.txt')
-text1 = text.read()
-text = open('text2.txt')
-text2 = text.read()
-text = open('text3.txt')
-text3 = text.read()
-text = open('text4.txt')
-text4 = text.read()
-text_len1 = len(text1) #count of all characters
-text_len2 = len(text2)
-text_len3 = len(text3)
-text_len4 = len(text4)
-text1_list = convert_line_to_list(text1) #lists of all characters
-text2_list = convert_line_to_list(text2)
-text3_list = convert_line_to_list(text3)
-text4_list = convert_line_to_list(text4)
-text1_every_char_count, text1_every_char_list = count_char_num(text1) #lists of every char count and list
-text2_every_char_count, text2_every_char_list = count_char_num(text2)
-text3_every_char_count, text3_every_char_list = count_char_num(text3)
-text4_every_char_count, text4_every_char_list = count_char_num(text4)
-pi1 = probability(text1_every_char_count, text_len1) # lists of probabilities
-pi2 = probability(text2_every_char_count, text_len2)
-pi3 = probability(text3_every_char_count, text_len3)
-pi4 = probability(text4_every_char_count, text_len4)
-n1 = nvalue (text1_every_char_count)
-n2 = nvalue (text2_every_char_count)
-n3 = nvalue (text3_every_char_count)
-n4 = nvalue (text4_every_char_count)
-h1 = entropy(text1_every_char_count)
-h2 = entropy(text2_every_char_count)
-h3 = entropy(text3_every_char_count)
-h4 = entropy(text4_every_char_count)
-all_lst = all_list(text1_list,text2_list,text3_list,text4_list)
-all_c, all_l = count_char_num (all_lst) #count and list of characters from all texts
-sn1 = serial_number(all_l, text1_every_char_list)
-sn2 = serial_number(all_l, text2_every_char_list)
-sn3 = serial_number(all_l, text3_every_char_list)
-sn4 = serial_number(all_l, text4_every_char_list)
-graph = []
-graph2 = []
-graph3 = []
-graph4 = []
-numg1 = []
-numg2 = []
-numg3 = []
-numg4 = []
-pi12 = pi1
-pi22 = pi2
-pi32 = pi3
-pi42 = pi4
-#cpi1 = 
-#cpi2 = chr(pi2)
-#cpi3 = chr(pi3)
-#cpi4 = chr(pi4)
-counter = 0
-elist = []
-for i in text1_every_char_list:
-	elist.append(i)
-for i in text2_every_char_list:
-	if elist.count(i) == 0:
-		elist.insert(counter,i)
-for i in text3_every_char_list:
-	if elist.count(i) == 0:
+
+
+def main():
+	text = open('text1.txt')
+	text1 = text.read()
+	text = open('text2.txt')
+	text2 = text.read()
+	text = open('text3.txt')
+	text3 = text.read()
+	text = open('text4.txt')
+	text4 = text.read()
+	text_len1 = len(text1) #count of all characters
+	text_len2 = len(text2)
+	text_len3 = len(text3)
+	text_len4 = len(text4)
+	text1_list = convert_line_to_list(text1) #lists of all characters
+	text2_list = convert_line_to_list(text2)
+	text3_list = convert_line_to_list(text3)
+	text4_list = convert_line_to_list(text4)
+	text1_every_char_count, text1_every_char_list = count_char_num(text1) #lists of every char count and list
+	text2_every_char_count, text2_every_char_list = count_char_num(text2)
+	text3_every_char_count, text3_every_char_list = count_char_num(text3)
+	text4_every_char_count, text4_every_char_list = count_char_num(text4)
+	pi1 = probability(text1_every_char_count, text_len1) # lists of probabilities
+	pi2 = probability(text2_every_char_count, text_len2)
+	pi3 = probability(text3_every_char_count, text_len3)
+	pi4 = probability(text4_every_char_count, text_len4)
+	n1 = nvalue (text1_every_char_count)
+	n2 = nvalue (text2_every_char_count)
+	n3 = nvalue (text3_every_char_count)
+	n4 = nvalue (text4_every_char_count)
+	h1 = entropy(text1_every_char_count)
+	h2 = entropy(text2_every_char_count)
+	h3 = entropy(text3_every_char_count)
+	h4 = entropy(text4_every_char_count)
+	all_lst = all_list(text1_list,text2_list,text3_list,text4_list)
+	all_c, all_l = count_char_num (all_lst) #count and list of characters from all texts
+	sn1 = serial_number(all_l, text1_every_char_list)
+	sn2 = serial_number(all_l, text2_every_char_list)
+	sn3 = serial_number(all_l, text3_every_char_list)
+	sn4 = serial_number(all_l, text4_every_char_list)
+	graph = []
+	graph2 = []
+	graph3 = []
+	graph4 = []
+	numg1 = []
+	numg2 = []
+	numg3 = []
+	numg4 = []
+	pi12 = pi1
+	pi22 = pi2
+	pi32 = pi3
+	pi42 = pi4
+	#cpi1 =
+	#cpi2 = chr(pi2)
+	#cpi3 = chr(pi3)
+	#cpi4 = chr(pi4)
+	counter = 0
+	elist = []
+	for i in text1_every_char_list:
 		elist.append(i)
-for i in text4_every_char_list:
-	if elist.count(i) == 0:
-		elist.append(i)
-for i in elist:
-	if text1_every_char_list.count(i) == 0:
-		pi12.insert(counter, 0)
-	counter += 1
-counter = 0
-for i in elist:
-	if text2_every_char_list.count(i) == 0:
-		pi22.insert(counter, 0)
-	counter += 1
-counter = 0
-for i in elist:
-	if text3_every_char_list.count(i) == 0:
-		pi32.insert(counter, 0)
-	counter += 1
-counter = 0
-for i in elist:
-	if text4_every_char_list.count(i) == 0:
-		pi42.insert(counter, 0)
-	counter += 1
-counter = 0
+	for i in text2_every_char_list:
+		if elist.count(i) == 0:
+			elist.insert(counter,i)
+	for i in text3_every_char_list:
+		if elist.count(i) == 0:
+			elist.append(i)
+	for i in text4_every_char_list:
+		if elist.count(i) == 0:
+			elist.append(i)
+	for i in elist:
+		if text1_every_char_list.count(i) == 0:
+			pi12.insert(counter, 0)
+		counter += 1
+	counter = 0
+	for i in elist:
+		if text2_every_char_list.count(i) == 0:
+			pi22.insert(counter, 0)
+		counter += 1
+	counter = 0
+	for i in elist:
+		if text3_every_char_list.count(i) == 0:
+			pi32.insert(counter, 0)
+		counter += 1
+	counter = 0
+	for i in elist:
+		if text4_every_char_list.count(i) == 0:
+			pi42.insert(counter, 0)
+		counter += 1
+	counter = 0
 
-for i in elist: 
-	graph.append(ord(i))
-for i in range(len(pi12)):
-	numg1.append(i)
-for i in range(len(pi22)):
-	numg2.append(i)
-for i in range(len(pi32)):
-	numg3.append(i)
-for i in range(len(pi42)):
-	numg4.append(i)
-
-
-
-#pylab.annotate(
- #   'message',
-  #  xy=(6, 30),
-   # xytext=(8, 31.5),
-    #arrowprops={
-     #   'facecolor': 'black',
-      #  'shrink': 0.05
-    #});
+	for i in elist:
+		graph.append(ord(i))
+	for i in range(len(pi12)):
+		numg1.append(i)
+	for i in range(len(pi22)):
+		numg2.append(i)
+	for i in range(len(pi32)):
+		numg3.append(i)
+	for i in range(len(pi42)):
+		numg4.append(i)
 
 
-print (' ________________________________________________________________________________________________________________')
-print ('|Символы (код)	|' + 'Текст №1		|'+ 'Текст №2		|'+ 'Текст №3		|'+ 'Текст №4			|')
-print (' ________________________________________________________________________________________________________________')
-print ('|		|Кол	|'+'p	|'+'H	|Кол	|'+'p	|'+'H	|Кол	|'+'p	|'+'H	|Кол	|'+'p	|'+'H	|')
-print ('|________________________________________________________________________________________________________________')
-output(text1_every_char_count,text2_every_char_count,text3_every_char_count,text4_every_char_count,text1_every_char_list,text2_every_char_list,text3_every_char_list,text4_every_char_list,pi1,pi2,pi3,pi4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4)
+
+	#pylab.annotate(
+	 #   'message',
+	  #  xy=(6, 30),
+	   # xytext=(8, 31.5),
+		#arrowprops={
+		 #   'facecolor': 'black',
+		  #  'shrink': 0.05
+		#});
 
 
-###pylab.plot(221)
-##pylab.plot (numg1,pi1)
-##pylab.xticks(numg1,graph)
-##pylab.xlabel('Код символа')
-##pylab.ylabel('Вероятность')
-##pylab.title('Английский текст №1',fontsize=10)
-##
-###pylab.subplot(222)
-##pylab.plot (numg3, pi3)
-##pylab.xticks(numg3,graph)
-##pylab.xlabel('Код символа')
-##pylab.ylabel('Вероятность')
-##pylab.title('Русский текст №1',fontsize=10)
-##
-###pylab.subplot(223)
-##pylab.plot (numg2, pi2)
-##pylab.xticks(numg2,graph)
-##pylab.xlabel('Код символа')
-##pylab.ylabel('Вероятность')
-##pylab.title('Английский текст №2',fontsize=10)
-
-#pylab.subplot(224)
-pylab.plot (numg4, pi4)
-pylab.xticks(numg4,graph)
-pylab.xlabel('Код символа')
-pylab.ylabel('Вероятность')
-pylab.title('Русский текст №2',fontsize=10)
+	print (' ________________________________________________________________________________________________________________')
+	print ('|Символы (код)	|' + 'Текст №1		|'+ 'Текст №2		|'+ 'Текст №3		|'+ 'Текст №4			|')
+	print (' ________________________________________________________________________________________________________________')
+	print ('|		|Кол	|'+'p	|'+'H	|Кол	|'+'p	|'+'H	|Кол	|'+'p	|'+'H	|Кол	|'+'p	|'+'H	|')
+	print ('|________________________________________________________________________________________________________________')
+	output(text1_every_char_count,text2_every_char_count,text3_every_char_count,text4_every_char_count,text1_every_char_list,text2_every_char_list,text3_every_char_list,text4_every_char_list,pi1,pi2,pi3,pi4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4)
 
 
-pylab.show()
+	###pylab.plot(221)
+	##pylab.plot (numg1,pi1)
+	##pylab.xticks(numg1,graph)
+	##pylab.xlabel('Код символа')
+	##pylab.ylabel('Вероятность')
+	##pylab.title('Английский текст №1',fontsize=10)
+	##
+	###pylab.subplot(222)
+	##pylab.plot (numg3, pi3)
+	##pylab.xticks(numg3,graph)
+	##pylab.xlabel('Код символа')
+	##pylab.ylabel('Вероятность')
+	##pylab.title('Русский текст №1',fontsize=10)
+	##
+	###pylab.subplot(223)
+	##pylab.plot (numg2, pi2)
+	##pylab.xticks(numg2,graph)
+	##pylab.xlabel('Код символа')
+	##pylab.ylabel('Вероятность')
+	##pylab.title('Английский текст №2',fontsize=10)
+
+	#pylab.subplot(224)
+	pylab.plot (numg4, pi4)
+	pylab.xticks(numg4,graph)
+	pylab.xlabel('Код символа')
+	pylab.ylabel('Вероятность')
+	pylab.title('Русский текст №2',fontsize=10)
+
+	pylab.show()
+
+
+if __name__ == "__main__":
+	main()

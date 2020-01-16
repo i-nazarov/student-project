@@ -3,11 +3,8 @@ import math
 import pylab
 
 
-def convert_line_to_list(txt): 
-	l = []
-	for i in txt:
-		l.append(i)
-	return l
+def text2list(txt):
+	return [c for c in txt]
 
 
 def count_char_num(txt): #counting numbers of exist characters
@@ -24,7 +21,7 @@ def count_char_num(txt): #counting numbers of exist characters
 
 def probability(txt_cnt, txt_len):
 	l = []
-	for i in txt_cnt: 
+	for i in txt_cnt:
 		p=i/txt_len
 		l.append(round(p,2))
 	return l
@@ -75,7 +72,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 	ch3 = str(h3)
 	ch4 = str(h4)
 	for a in all_l:
-		for i1 in c1:	
+		for i1 in c1:
 			for i2 in c2:
 				for i3 in c3:
 					for i4 in c4:
@@ -86,21 +83,21 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +str(c1.pop(0))  + '  	|' + str(p1[cp1]) +  '  	|' + ch1 + '|' + str(c2.pop(0))  + '  	|' + str(p2[cp2]) +  '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) +  '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')	
-							counter1 += 1						
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +str(c1.pop(0))  + '  	|' + str(p1[cp1]) +  '  	|' + ch1 + '|' + str(c2.pop(0))  + '  	|' + str(p2[cp2]) +  '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) +  '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
+							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 0 and sn3.count(counter1) == 0 and sn4.count(counter1) == 0:
 							if counter1 <= 25:
 								cp1 = counter1 -1
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + '0' + '  	|' + '0.00' + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')							
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + '0' + '  	|' + '0.00' + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
 							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 0 and sn3.count(counter1) == 0 and sn4.count(counter1) == 1:
 							if counter1 <= 25:
@@ -108,73 +105,73 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|'  + '0' + '  	|' + '0.00' + '  	|' + ch1 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')						
-							counter1 += 1	
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|'  + '0' + '  	|' + '0.00' + '  	|' + ch1 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
+							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 0 and sn3.count(counter1) == 1 and sn4.count(counter1) == 0:
 							if counter1 <= 25:
 								cp1 = counter1 -1
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0'  + '  	|' + '0.00' + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')				
-							counter1 += 1				
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0'  + '  	|' + '0.00' + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
+							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 0 and sn3.count(counter1) == 1 and sn4.count(counter1) == 1:
 							if counter1 <= 25:
 								cp1 = counter1 -1
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0'  + '  	|' + '0.00' + '  	|' + ch1 + '|' + '0'  + '  	|' + '0.00' + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')	
-							counter1 += 1						
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0'  + '  	|' + '0.00' + '  	|' + ch1 + '|' + '0'  + '  	|' + '0.00' + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
+							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 1 and sn3.count(counter1) == 0 and sn4.count(counter1) == 0:
 							if counter1 <= 25:
 								cp1 = counter1 -1
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0' + '  	|' + '0.00' + '  	|' + ch1 + '|' + str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')		
-							counter1 += 1					
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0' + '  	|' + '0.00' + '  	|' + ch1 + '|' + str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
+							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 1 and sn3.count(counter1) == 0 and sn4.count(counter1) == 1:
 							if counter1 <= 25:
 								cp1 = counter1 -1
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0'  '  	|'  + '0.00' + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')	
-							counter1 += 1						
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0'  '  	|'  + '0.00' + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
+							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 1 and sn3.count(counter1) == 1 and sn4.count(counter1) == 0:
 							if counter1 <= 25:
 								cp1 = counter1 -1
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
-							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0' + '  	|' + '0.00' + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')	
-							counter1 += 1						
+							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0' + '  	|' + '0.00' + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
+							counter1 += 1
 						elif sn1.count(counter1) == 0 and sn2.count(counter1) == 1 and sn3.count(counter1) == 1 and sn4.count(counter1) == 1:
 							if counter1 <= 25:
 								cp1 = counter1 -1
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' +'0' + '  	|' + '0.00' + '  	|' + ch1 + '|' + str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
@@ -185,7 +182,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
@@ -196,7 +193,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
@@ -207,7 +204,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
@@ -218,7 +215,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  '0' + '  	|' + '0.00' + '  	|' + ch2 + '|' + 	str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
@@ -229,7 +226,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|'	 + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
@@ -240,7 +237,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + '0' + '  	|' + '0.00' + '  	|' + ch3 + '|' + str(c4.pop(0))  + '  	|' + str(p4[cp4]) +  '  	|'+ ch4 + '	|')
@@ -251,7 +248,7 @@ def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4
 							if counter1 <= 21:
 								cp2 = counter1 -1
 							if counter1 <= 28:
-								cp3 = counter1 -1 
+								cp3 = counter1 -1
 							if counter1 <= 36:
 								cp4 = counter1 -1
 							print('| ' + all_l[counter1-1] + ' (' + str(temp) + ')' + ' 	|' + str(c1.pop(0)) + '  	|' + str(p1[cp1]) + '  	|' + ch1 + '|' +  str(c2.pop(0)) + '  	|' + str(p2[cp2]) + '  	|' + ch2 + '|' + str(c3.pop(0)) + '  	|' + str(p3[cp3]) + '  	|' + ch3 + '|' + '0' + '  	|' + '0.00  	|'+ ch4 + '	|')
@@ -272,10 +269,10 @@ def main():
 	text_len2 = len(text2)
 	text_len3 = len(text3)
 	text_len4 = len(text4)
-	text1_list = convert_line_to_list(text1) #lists of all characters
-	text2_list = convert_line_to_list(text2)
-	text3_list = convert_line_to_list(text3)
-	text4_list = convert_line_to_list(text4)
+	text1_list = text2list(text1) #lists of all characters
+	text2_list = text2list(text2)
+	text3_list = text2list(text3)
+	text4_list = text2list(text4)
 	text1_every_char_count, text1_every_char_list = count_char_num(text1) #lists of every char count and list
 	text2_every_char_count, text2_every_char_list = count_char_num(text2)
 	text3_every_char_count, text3_every_char_list = count_char_num(text3)

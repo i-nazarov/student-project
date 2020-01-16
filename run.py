@@ -34,12 +34,11 @@ class Text:
 			char_prob[key] = round(prob, 2)
 		self.char_prob = char_prob
 
-	
-def entropy(n):
-	s = 0
-	for i in n:
-		s += i * (math.log(i, 10))
-	return (-1) * round(s, 2)
+	def calc_ent(self):
+		ent = 0
+		for key, val in self.char_prob.items():
+			ent += val * (math.log(val, 10))
+		return (-1) * round(ent, 2)
 
 
 def all_list(l1, l2, l3, l4):

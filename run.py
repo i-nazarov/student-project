@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 import math
 import pylab
+
+
 def convert_line_to_list(txt): 
 	l = []
 	for i in txt:
 		l.append(i)
 	return l
+
+
 def count_char_num(txt): #counting numbers of exist characters
 	lc = []
 	la = []
@@ -16,22 +20,30 @@ def count_char_num(txt): #counting numbers of exist characters
 			lc.append(count)
 			la.append(achar)
 	return lc, la
+
+
 def probability(txt_cnt, txt_len):
 	l = []
 	for i in txt_cnt: 
 		p=i/txt_len
 		l.append(round(p,2))
 	return l
+
+
 def nvalue(chrlist):
 	c = 0
 	for i in chrlist:
 		c += 1
 	return c
+
+
 def entropy(n):
 	s = 0
 	for i in n:
 		s +=  i*(math.log(i, 10))
 	return (-1)*round(s, 2)
+
+
 def all_list(l1,l2,l3,l4):
 	l = []
 	l.extend(l1)
@@ -39,6 +51,8 @@ def all_list(l1,l2,l3,l4):
 	l.extend(l3)
 	l.extend(l4)
 	return l
+
+
 def serial_number(all_l, txt_evrchl):
 	clist = [] #list of coinsiding values
 	counter = 0
@@ -48,6 +62,8 @@ def serial_number(all_l, txt_evrchl):
 			if n == i:
 				clist.append(counter)
 	return clist
+
+
 def output(c1,c2,c3,c4,s1,s2,s3,s4,p1,p2,p3,p4,h1,h2,h3,h4,all_l,sn1,sn2,sn3,sn4):	#counts, strings probability, entropy
 	counter1 = 1
 	cp1 = 0

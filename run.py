@@ -40,6 +40,18 @@ class Text:
 			ent += val * (math.log(val, 10))
 		self.entropy = ent
 
+	def get_value(self, value):
+		if value == 'letters':
+			return list(self.chars_num.keys())
+		elif value == 'quantity':
+			return self.chars_num.values()
+		elif value == 'entropy':
+			return self.entropy
+		elif value == 'length':
+			return self.text_len
+		else:
+			raise Exception('Incorrect value')
+
 
 def get_strings(n):
 	texts = []
@@ -344,28 +356,8 @@ def main():
 		text.calc_len()
 		text.calc_ent()
 
-	text_len1 = len(text1)  # count of all characters
-	text_len2 = len(text2)
-	text_len3 = len(text3)
-	text_len4 = len(text4)
-	text1_list = list(text1)  # lists of all characters
-	text2_list = list(text2)
-	text3_list = list(text3)
-	text4_list = list(text4)
-	text1_every_char_count, text1_every_char_list = count_chars(text1)  # lists of every char count and list
-	text2_every_char_count, text2_every_char_list = count_chars(text2)
-	text3_every_char_count, text3_every_char_list = count_chars(text3)
-	text4_every_char_count, text4_every_char_list = count_chars(text4)
-	pi1 = probability(text1_every_char_count, text_len1)  # lists of probabilities
-	pi2 = probability(text2_every_char_count, text_len2)
-	pi3 = probability(text3_every_char_count, text_len3)
-	pi4 = probability(text4_every_char_count, text_len4)
-	h1 = entropy(text1_every_char_count)
-	h2 = entropy(text2_every_char_count)
-	h3 = entropy(text3_every_char_count)
-	h4 = entropy(text4_every_char_count)
+
 	all_lst = all_list(text1_list, text2_list, text3_list, text4_list)
-	all_c, all_l = count_chars(all_lst)  # count and list of characters from all texts
 	sn1 = serial_number(all_l, text1_every_char_list)
 	sn2 = serial_number(all_l, text2_every_char_list)
 	sn3 = serial_number(all_l, text3_every_char_list)

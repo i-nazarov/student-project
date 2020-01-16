@@ -6,10 +6,10 @@ import pylab
 class Text:
 	def __init__(self, text_list):
 		self.text_list = text_list
-		self.text_len = len(text_list)
 		self.chars_num = {}
 		self.char_prob = {}
 		self.entropy = 0
+		self.text_len = 0
 
 	def count_chars(self):
 		lat_chars = 'abcdefghijklmnopqrstuvwxyz'
@@ -21,14 +21,20 @@ class Text:
 				chars_num[c] += 1
 		self.chars_num = chars_num
 
+	def calc_len(self):
+		text_len = 0
+		for key, val in self.chars_num.items():
+			text_len += val
+		self.text_len = text_len
+
 	def calc_prob(self):
 		char_prob = {}
 		for key, val in self.chars_num.items():
-			prob = val/self.text_len
+			prob = val / self.text_len
 			char_prob[key] = round(prob, 2)
 		self.char_prob = char_prob
 
-
+	
 def entropy(n):
 	s = 0
 	for i in n:
